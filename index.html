@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>温馨提示</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            font-family: "Microsoft YaHei", sans-serif;
+        }
+        .tip-box {
+            padding: 20px;
+            border-radius: 8px;
+            width: 80%;
+            max-width: 300px;
+        }
+        .tip-text {
+            font-size: 16px;
+            line-height: 1.8;
+        }
+    </style>
+</head>
+<body>
+    <div class="tip-box" id="tipBox">
+        <p class="tip-text" id="tipText">加载中...</p>
+    </div>
+
+    <script>
+        // 温馨提示列表（已新增“坚持坚持”“一起上岸”）
+        const tips = [
+            '多喝水哦~', '保持微笑呀', '每天都要元气满满',
+            '记得吃水果', '保持好心情', '好好爱自己', '我想你了',
+            '梦想成真', '期待下一次见面', '金榜题名',
+            '坚持坚持', '一起上岸', // 新增的两段话
+            '顺顺利利', '早点休息', '愿所有烦恼都消失',
+            '别熬夜', '今天过得开心嘛', '天冷了，多穿衣服'
+        ];
+
+        // 背景颜色列表（RGB格式）
+        const bgColors = [
+            'lightpink', 'skyblue', 'lightgreen', 'lavender',
+            'lightyellow', 'plum', 'coral', 'bisque', 'aquamarine',
+            'mistyrose', 'honeydew', 'lavenderblush', 'oldlace'
+        ];
+
+        // 随机选择提示和背景色
+        const randomTip = tips[Math.floor(Math.random() * tips.length)];
+        const randomBg = bgColors[Math.floor(Math.random() * bgColors.length)];
+
+        // 渲染到页面
+        document.getElementById('tipText').innerText = randomTip;
+        document.getElementById('tipBox').style.backgroundColor = randomBg;
+    </script>
+</body>
+</html>
